@@ -1,0 +1,14 @@
+- name: Installing containerd on workers
+  hosts: all
+  roles:
+    - containerd-installation 
+
+- name: Setting SystemdCgroup 
+  hosts: all
+  roles:
+    - cgroup-configuration
+
+- name: Installing K8S (kubeadm, kubelet, kubectl) on all nodes
+  hosts: all
+  roles:
+    - k8sinstall
