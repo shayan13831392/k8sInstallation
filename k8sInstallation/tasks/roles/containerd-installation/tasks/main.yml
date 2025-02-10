@@ -1,0 +1,16 @@
+---
+ - name: swappoff
+   replace: 
+     path: "/etc/fstab"
+     regexp: "/swap.img"
+     replace: "#/swap.img"
+     backup: yes
+ - name: swapoff instantly
+   shell: "swappoff -a" 
+
+
+  - name: install keyrings
+    shell: "install -m 0755 -d /etc/apt/keyrings"
+    
+
+
